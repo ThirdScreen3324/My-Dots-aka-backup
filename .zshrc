@@ -1,3 +1,4 @@
+#MOST OF THIS IS NOT MINE, most of the is made by Bread on Penguins
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE="$XDG_CACHE_HOME/zsh_history"
@@ -19,7 +20,6 @@ zstyle :compinstall filename '/home/Thirdscreen/.zshrc'
 zmodload zsh/complist
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
-autoload -Uz tetriscurses
 # cmp opts
 zstyle ':completion:*' menu select # tab opens cmp menu
 zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
@@ -28,7 +28,7 @@ zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ exp
 
 alias :wq='exit'
 alias cheesesuger='mv ~/.gnome2/cheese/media/* ~/pics/cam/webcam/'
-alias du='du -h -d 1 | sort -h'
+alias du='du -ha -d 1 | sort -h'
 alias fan='shutdown -P now'
 alias fk='sudo !!'
 alias icat='kitten icat'
