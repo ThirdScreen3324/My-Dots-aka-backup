@@ -53,3 +53,5 @@ xfce4/
 .config/htop/
 .config/qutebrowser/
 initrc-conf
+.cargo/
+.librewolf/
