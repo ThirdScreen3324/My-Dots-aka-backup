@@ -1,0 +1,38 @@
+[color4] = {color4}
+[background] = {background}
+[foreground] = {foreground}
+[global]
+    monitor = 0
+    follow = keyboard
+    markup = full
+    hide_duplicate_count = true
+    width = (250, 500)
+    height = (0, 750)
+    offset = (17, 26)
+    padding = 5
+    horizontal_padding = 5
+    gap_size = 3
+    transparency = 35
+    frame_width = 1
+    frame_color = "{color4}"
+    font = Libertinus Mono 11
+    corner_radius = 5
+    min_icon_size = 32
+    max_icon_size = 128
+    format = "<b>%s</b>\n%b"
+
+[urgency_low]
+    foreground = "{foreground}"
+    background = "{background}"
+    timeout = 3
+
+[urgency_normal]
+    foreground = "{foreground}"
+    background = "{background}"
+    timeout = 5
+
+[urgency_critical]
+    background = "{background}"
+    foreground = "{foreground}"
+    frame_color = "#ff0000"
+    timeout = 15

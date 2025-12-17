@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+ln -sf ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
+ln -sf ~/.cache/wal/cava ~/.config/cava/config
+
+xdotool key super+control+r
+
+pkill dunst; setsid -f dunst
+
+notify-send -i "$(cat ~/.cache/wal/wal)" "Wallpaper changed" "Colorscheme updated"

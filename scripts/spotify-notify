@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+# music dir for local songs imported in spotify (change this to the music dir path)
+MUSIC_DIR="$HOME/music"
+
+# Function to extract album art from local MP3
+extract_local_art() {
+    local title="$1"
+    local artist="$2"
+
+    # Loop over all mp3 files in ~/Music
+    for file in "$MUSIC_DIR"/*.mp3; do
+        [[ ! -f "$file" ]] && continue
+
+        # Extract metadata from mp3 file using ffprobe
+        mp3_title=$(ffprobe -v quiet -show_entries format_tags=title -of csv=p=0 "$file")
+        mp3_artist=$(ffprobe -v quiet -show_entries format_tags=artist -of csv=p=0 "$file")
+
+        # Compare title (case-insensitive)
+        if [[ "${mp3_title,,}" == "${title,,}" ]]; then
+            # Extract embedded album art
+            ffmpeg -v quiet -i "$file" -an -vcodec copy /tmp/spotify_local_art.jpg
+            echo "/tmp/spotify_local_art.jpg"
+            return
+        fi
+    done
+
+    echo ""
+}
+
+playerctl --player=spotify metadata --format '{{title}}|{{artist}}|{{mpris:artUrl}}' --follow |
+while IFS="|" read -r title artist arturl; do
+
+    img=""
+
+    # --- ONLINE Spotify track (artUrl available) ---
+    if [[ -n "$arturl" ]]; then
+        img="/tmp/spotify_art.jpg"
+        curl -s "$arturl" -o "$img"
+        if [[ ! -s "$img" ]]; then
+            img=""
+        fi
+    fi
+
+    # --- LOCAL Spotify track (no artUrl) ---
+    if [[ -z "$arturl" ]]; then
+        local_img=$(extract_local_art "$title" "$artist")
+        if [[ -f "$local_img" ]]; then
+            img="$local_img"
+        fi
+    fi
+
+    # --- Notification text style ---
+    message="<big><b>$title</b></big>\n$artist"
+
+    # --- SEND notification ---
+    if [[ -n "$img" ]]; then
+        notify-send "" "$message" -i "$img" -u normal
+    else
+        notify-send "" "$message" -u normal
+    fi
+
+done
