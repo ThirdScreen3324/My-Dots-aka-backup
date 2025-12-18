@@ -37,6 +37,7 @@ alias mv='mv -i'
 alias omstart='shutdown -r now'
 alias rm='rm -Iv'
 alias vim='nvim'
+alias mpvseries='mpv --autocreate-playlist=same'
 
 function ffscreenrecord () {
 	ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 ~/vids/screenrecords/$1
@@ -57,3 +58,4 @@ NEWLINE=$'\n'
 PROMPT="${NEWLINE}%K{"$color1"}%F{"$foreground"} %n %K{"$color9"} %~ %f%k ❯ " # pywal colors, from postrun script
 # Programs to run at start
 fastfetch
+. "/home/Thirdscreen/.deno/env"
