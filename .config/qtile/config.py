@@ -56,10 +56,10 @@ def autostart():
 
 # Cleans up long .widget.WindowName
 def clean_titles(text):
-    if "Thirdscreen@travelscreen:" in text:
-        return text.replace("Thirdscreen@travelscreen", "Thirdscreen")
-    elif "Spotify Premium" in text:
+    if "Spotify Premium" in text:
         return text.replace("Spotify Premium", "Spotify")
+    elif "yt-dlp" in text:
+        return "yt-dlp download"
     for string in ["Firefox"]:
         if string in text:
             text = string

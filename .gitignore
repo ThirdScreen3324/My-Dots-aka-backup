@@ -59,3 +59,4 @@ initrc-conf
 pics/
 recorver_zshrc.var
 vids/
+.config/qtile/__pycache__/
