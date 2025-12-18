@@ -38,6 +38,12 @@ alias omstart='shutdown -r now'
 alias rm='rm -Iv'
 alias vim='nvim'
 alias mpvseries='mpv --autocreate-playlist=same'
+alias cast-to-tv='go-chromecast -n "Vardagsrum"'
+
+
+function ffsubtitleextract () {
+	ffmpeg -i $1.mkv -map 0:s:0 $1.srt
+}
 
 function ffscreenrecord () {
 	ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 ~/vids/screenrecords/$1
