@@ -244,6 +244,11 @@ screens = [
                     format='{xesam:artist} - {xesam:title}', 
                     **powerline
                 ),
+                widget.Mpd2(
+                    status_format='{play_status} {artist} - {title}',
+                    update_interval=0.1, 
+                    **powerline
+                ),
                 widget.Memory(
                     format='RAM:{MemUsed: .2f}{mm}/{MemTotal: .0f}{mm}', 
                     measure_mem='G',
