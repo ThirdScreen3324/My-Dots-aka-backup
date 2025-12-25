@@ -120,9 +120,14 @@ keys = [
     # Media controls
     Key([mod], "space", lazy.spawn("playerctl play-pause"), desc="Play/Pause player"),
     Key([mod], "Right", lazy.spawn("playerctl next"), desc="Skip to next"),
-    Key([mod], "Left", lazy.spawn("playerctl previous"), desc="Skip to previous"),
+    Key([mod], "Left", lazy.spawn("playerctl previous"), desc="Hop back to previous"),
     Key([mod], "Up", lazy.spawn("playerctl volume 0.05+"), desc="Increase volume by 5%"),
     Key([mod], "Down", lazy.spawn("playerctl volume 0.05-"), desc="Decrease volume by 5%"),
+    Key([mod, "shift"], "space", lazy.spawn("mpc toggle"), desc="Play/Pause player"),
+    Key([mod, "shift"], "Right", lazy.spawn("mpc next"), desc="Skip to next"),
+    Key([mod, "shift"], "Left", lazy.spawn("mpc prev"), desc="Hop back to previous"),
+    Key([mod, "shift"], "Up", lazy.spawn("mpc volume +5"), desc="Increase volume by 5%"),
+    Key([mod, "shift"], "Down", lazy.spawn("mpc volume -5"), desc="Decrease volume by 5%"),
     Key([mod], "F3", lazy.spawn("brightnessctl set 10%+"), desc="Increase screen brightness by 10%"),
     Key([mod], "F4", lazy.spawn("brightnessctl set 10%-"), desc="Decrease screen brightness by 10%"),
     # Toggle between different layouts as defined below
