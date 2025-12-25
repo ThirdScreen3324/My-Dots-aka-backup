@@ -47,7 +47,8 @@ mod = "mod4"
 my_term = "kitty"
 term_exec = "kitty -e"
 my_web = "firefox"
-my_music = "spotify-launcher"
+my_music = "rmpc"
+my_music_stream = "spotify-launcher"
 
 @hook.subscribe.startup_once
 def autostart():
@@ -106,7 +107,8 @@ keys = [
     Key([mod, "shift"],"Return",lazy.layout.toggle_split(),desc="Toggle between split and unsplit sides of stack",),
     # Launch binds
     Key([mod], "Return", lazy.spawn(my_term),desc="Launch terminal"),
-    Key([mod], "s", lazy.spawn({my_music}),desc="Launch music player"),
+    Key([mod], "s", lazy.spawn({my_music_stream}),desc="Launch music streaming platform"),
+    Key([mod], "m", lazy.spawn(f"{term_exec} {my_music}"),desc="Launch music player"),
     Key([mod], "w", lazy.spawn(my_web),desc="Launch browser"),
     Key([mod, "shift"], "n", lazy.spawn(f"{term_exec} nmtui"),desc="Launch Network Manager"),
     Key([mod, "shift"], "b", lazy.spawn(f"{term_exec} bluetui"),desc="Launch bluetooth manager"),
