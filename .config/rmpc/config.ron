@@ -31,9 +31,9 @@
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Playing"),
-            "4":       SwitchToTab("Dir"),
+            "4":       SwitchToTab("Library"),
             "3":       SwitchToTab("Lists"),
-            "2":       SwitchToTab("Find"),
+            "2":       SwitchToTab("Search"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -117,7 +117,7 @@
             ),
         ),
         (
-            name: "Find",
+            name: "Search",
             pane: Pane(Search),
         ),
        (
