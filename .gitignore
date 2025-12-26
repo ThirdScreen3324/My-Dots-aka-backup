@@ -1,3 +1,5 @@
+.config/audacity/
+.small-backups/ 
 .config/mpd/playlists/
 .config/MKV\ Extractor\ Qt5.conf
 .config/bunkus.org/
