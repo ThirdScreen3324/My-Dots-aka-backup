@@ -62,6 +62,7 @@ source ~/.cache/wal/colors.sh
 
 NEWLINE=$'\n'
 PROMPT="${NEWLINE}%K{"$color1"}%F{"$foreground"} %n %K{"$color9"} %~ %f%k ❯ " # pywal colors, from postrun script
+
 # Programs to run at start
 fastfetch
 . "/home/Thirdscreen/.deno/env"
