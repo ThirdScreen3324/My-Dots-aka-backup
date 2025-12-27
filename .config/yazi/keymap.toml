@@ -157,6 +157,10 @@ keymap = [
 	{ on = "<F1>", run = "help", desc = "Open help" },
 ]
 
+prepend_keymap = [
+	{ on = ["R","b"], run = "plugin recycle-bin", desc = "Open Recycle Bin menu" },
+]
+
 [tasks]
 
 keymap = [
