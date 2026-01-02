@@ -6,6 +6,7 @@
     follow = keyboard
     markup = full
     hide_duplicate_count = true
+    show_indicators = false
     width = (250, 500)
     height = (0, 750)
     offset = (17, 26)
