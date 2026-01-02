@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+####################
+#Notfication script#
+####################
+
 # Directory where to store temporary data
 TMP_DIR="/tmp/rmpc"
 
