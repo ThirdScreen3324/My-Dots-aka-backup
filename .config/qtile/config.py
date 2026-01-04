@@ -46,7 +46,7 @@ from qtile_extras.popup import (
 mod = "mod4"
 my_term = "kitty"
 term_exec = "kitty -e"
-my_web = "firefox"
+my_web = "librewolf"
 my_music = "rmpc"
 my_music_stream = "spotify-launcher"
 
