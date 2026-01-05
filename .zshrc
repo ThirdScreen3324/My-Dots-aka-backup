@@ -37,6 +37,7 @@ alias mv='mv -i'
 alias omstart='shutdown -r now'
 alias rm='rm -Iv'
 alias vim='nvim'
+alias svim='nvim $(fzf -e)'
 alias mpvseries='mpv --autocreate-playlist=same'
 alias cast-to-tv='go-chromecast -n "Vardagsrum"'
 
