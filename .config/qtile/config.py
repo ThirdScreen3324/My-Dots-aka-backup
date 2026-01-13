@@ -33,13 +33,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, 
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from qtile_extras import widget
-from qtile_extras.popup.templates.mpris2 import COMPACT_LAYOUT, DEFAULT_LAYOUT
 from qtile_extras.widget.decorations import PowerLineDecoration
-from qtile_extras.popup import (
-    PopupRelativeLayout,
-    PopupImage,
-    PopupText
-)
 
 
 
@@ -68,7 +62,7 @@ def clean_titles(text):
             text = text
     return text
 
-# Inport pywal colorscheme
+# Import pywal colorscheme
 colors = []
 cache='/home/Thirdscreen/.cache/wal/colors'
 def load_colors(cache):
