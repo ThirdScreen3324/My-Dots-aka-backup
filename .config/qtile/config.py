@@ -62,7 +62,7 @@ def clean_titles(text):
             text = text
     return text
 
-# Import pywal colorscheme
+# Inport pywal colorscheme
 colors = []
 cache='/home/Thirdscreen/.cache/wal/colors'
 def load_colors(cache):
