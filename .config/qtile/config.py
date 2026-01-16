@@ -239,7 +239,7 @@ screens = [
                     **powerline
                 ),
                 widget.Mpd2(
-                    status_format='{play_status} {artist} - {title} ({time})',
+                    status_format='{play_status} {artist} - {title} [{time}]',
                     #would use ({elapsed}/{fulltime}) if i could reformat it
                     update_interval=0.1, 
                     **powerline

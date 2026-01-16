@@ -60,7 +60,8 @@
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Playing"),
             "2":       SwitchToTab("Library"),
-            "3":       SwitchToTab("Search"),
+            "3":       SwitchToTab("Playlists"),
+            "4":       SwitchToTab("Search"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -164,6 +165,10 @@
         (
             name: "Library",
             pane: Pane(Directories),
+        ),
+        (
+            name: "Playlists",
+            pane: Pane(Playlists),
         ),
         (
             name: "Search",
