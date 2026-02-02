@@ -3,7 +3,7 @@
 export EDITOR="nvim"
 export TERM="kitty"
 export TERMINAL="kitty"
-export BROWSER="firefox"
+export BROWSER="librewolf"
 
 # follow XDG base dir specification
 export XDG_CONFIG_HOME="$HOME/.config"
