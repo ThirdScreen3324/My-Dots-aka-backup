@@ -109,7 +109,7 @@ keys = [
     Key([mod], "f", lazy.spawn(f"{term_exec} yazi"),desc="Launch file-manager"),
     Key([mod], "r", lazy.spawn("rofi -show drun"),desc="Launch rofi in drun mode"),
     Key([mod], "d", lazy.spawn("discord"),desc="Launch discord"),
-    Key([mod, "shift"], "s", lazy.spawn("setwal"),desc="Open wallpaper menu"),
+    Key([mod, "shift"], "s", lazy.spawn("/home/Thirdscreen/scripts/setwal"),desc="Open wallpaper menu"),
     Key([mod, "control"], "s", lazy.spawn("flameshot gui -p /home/Thirdscreen/pics/Screenshots/"),desc="Select area for screenshot"),
     # Media controls
     Key([mod], "space", lazy.spawn("playerctl play-pause"), desc="Play/Pause player"),
@@ -218,6 +218,56 @@ powerline = {
 
 logo = os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
 screens = [
+    Screen(
+        bottom=bar.Bar(
+            [
+                widget.CurrentLayout(
+                    use_mask=True, 
+                    mode='icon', 
+                    foreground=colors[10],
+                ),
+                widget.GroupBox(
+                    disable_drag=True, 
+                    active=colors[15],
+                    inactive=colors[8],
+                    this_current_screen_border=colors[3],
+                ),
+                widget.Prompt(),
+                widget.WindowName(parse_text=clean_titles, **powerline),
+                widget.Mpris2(
+                    format='{xesam:artist} - {xesam:title}', 
+                    **powerline
+                ),
+                widget.Mpd2(
+                    status_format='{play_status} {artist} - {title} [{time}]',
+                    #would use ({elapsed}/{fulltime}) if i could reformat it
+                    update_interval=0.1, 
+                    **powerline
+                ),
+                widget.Memory(
+                    format='RAM:{MemUsed: .1f}{mm}/{MemTotal: .0f}{mm}', 
+                    measure_mem='G',
+                    background=colors[2],
+                ),
+                widget.CPU(
+                    format='CPU usage: {load_percent}%', 
+                    background=colors[2], 
+                    **powerline
+                ),
+                widget.ThermalZone(background=colors[10], **powerline),
+                widget.Battery(
+                    format='{char}{percent:2.0%}', 
+                    background=colors[9], 
+                    **powerline
+                ),
+                widget.Clock(format="%a %d-%m %H:%M", background=colors[1]),
+            ],
+            24,
+            background=colors[0],
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            #border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+        )), 
+
     Screen(
         bottom=bar.Bar(
             [

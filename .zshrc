@@ -27,10 +27,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33 # colorize cmp me
 zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ expansion
 
 alias :wq='exit'
-alias cheesesuger='mv ~/.gnome2/cheese/media/* ~/pics/cam/webcam/'
 alias du='du -ha -d 1 | sort -h'
 alias fan='shutdown -P now'
-alias fk='sudo !!'
 alias icat='kitten icat'
 alias mjuk-omstart='systemctl soft-reboot'
 alias mv='mv -i'
@@ -40,6 +38,7 @@ alias vim='nvim'
 alias svim='nvim $(fzf -e)'
 alias mpvseries='mpv --autocreate-playlist=same'
 alias cast-to-tv='go-chromecast -n "Vardagsrum"'
+alias mount3ds='sudo mount -o uid=1000,utf8 /dev/mmcblk0p1 ~/mnt'
 
 
 function ffsubtitleextract () {
@@ -60,10 +59,11 @@ function y () {
 
 # Setting prompt and prompt colors
 source ~/.cache/wal/colors.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 NEWLINE=$'\n'
 PROMPT="${NEWLINE}%K{"$color1"}%F{"$foreground"} %n %K{"$color9"} %~ %f%k ❯ " # pywal colors, from postrun script
 
 # Programs to run at start
-fastfetch
 . "/home/Thirdscreen/.deno/env"

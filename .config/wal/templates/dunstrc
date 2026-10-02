@@ -13,7 +13,7 @@
     padding = 5
     horizontal_padding = 5
     gap_size = 3
-    transparency = 35
+    transparency = 0
     frame_width = 1
     frame_color = "{color4}"
     font = Libertinus Mono 11

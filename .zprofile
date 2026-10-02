@@ -15,6 +15,5 @@ export MPD_HOST="127.0.0.1"
 
 
 # add scripts to path
-export PATH="$HOME/scripts:$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/scripts:$HOME/.local/bin"
 
-wal -Rq

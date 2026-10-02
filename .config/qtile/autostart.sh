@@ -1,6 +1,7 @@
 #!/bin/sh
+source /home/Thirdscreen/.profile
 setxkbmap -layout se
 wal -Rq
-picom -b
+picom --animations -b
 dunst --startup_notification &
 spotify-notify &

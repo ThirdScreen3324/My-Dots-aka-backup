@@ -1,6 +1,6 @@
 # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+#:schema https://yazi-rs.github.io/schemas/keymap.json
 
 [mgr]
 
@@ -159,6 +159,7 @@ keymap = [
 
 prepend_keymap = [
 	{ on = ["R","b"], run = "plugin recycle-bin", desc = "Open Recycle Bin menu" },
+	{ on = "M", run = "plugin mount", desc = "Open mount menu" },
 ]
 
 [tasks]
